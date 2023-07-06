@@ -29,6 +29,7 @@ float Process::CpuUtilization() const {
     process_cpu = 0.0;
   }
   return process_cpu / 100;
+}
 
 // TODO: Return the command that generated this process
 string Process::Command() { return LinuxParser::Command(pid_); }
