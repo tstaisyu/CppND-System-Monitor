@@ -29,25 +29,6 @@ float Process::CpuUtilization() const {
     process_cpu = 0.0;
   }
   return process_cpu / 100;
-}
-/*
-// Source: https://knowledge.udacity.com/questions/139746
-  string v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18;
-  string line;
-  string Value;
-  long total_time;
-  float time_seconds;
-  std::ifstream stream(kProcDirectory + "/" + to_string(pid_) + kStatFilename);
-  if (stream.is_open()) {
-    std::getline(stream, line);
-    std::istringstream linestream(line);
-      linestream >> v0 >> v1 >> v2 >> v3 >> v4 >> v5 >> v6 >> v7 >> v8 >> v9 >>
-        v10 >> v11 >> v12 >> v13 >> v14 >> v15 >> v16 >> v17 >> v18;
-        total_time = stol(v15) + stol(v16) + stol(v17) + stol(v18);
-  }
-  time_seconds = total_time / sysconf(_SC_CLK_TCK);
-  return time_seconds / LinuxParser::UpTime(); 
-}*/
 
 // TODO: Return the command that generated this process
 string Process::Command() { return LinuxParser::Command(pid_); }
