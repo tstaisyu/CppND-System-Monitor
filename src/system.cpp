@@ -11,6 +11,8 @@
 #include "process.h"
 #include "processor.h"
 
+#define printVariableNameAndValue(x) cout<<"The name of variable **"<<(#x)<<"** and the value of variable is => "<<x<<"\n"
+
 using std::set;
 using std::size_t;
 using std::string;
@@ -29,7 +31,7 @@ Processor& System::Cpu() { return cpu_; }
 vector<Process>& System::Processes() {
     processes_.clear(); 
     vector<int> pids = LinuxParser::Pids();
-    for (long int i = 0; i < pids.size() ; i++) {
+    for (long unsigned int i = 0; i < pids.size() ; i++) {
         processes_.emplace_back(Process(pids[i]));
     }
     sort(processes_.begin(), processes_.end());
